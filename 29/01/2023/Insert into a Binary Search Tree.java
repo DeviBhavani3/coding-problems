@@ -8,37 +8,35 @@ public class TreeNode {
           this.val = val;
           this.left = left;
           this.right = right;
-      }
-  }
+   }
+ }
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
         if(root==null)
         {
          root = new TreeNode(val);
          return root; 
-        } 
-        
+        }        
         TreeNode curr=root;
         TreeNode parent=root;
         while(curr!=null){
         parent=curr;
-            if(curr.val>val){
-                curr=curr.left;
-            }
-            else{
+            if(val>curr.val){
                 curr=curr.right;
             }
+            else{
+                curr=curr.left;
+            }
         }
-        if(parent.val>val){
-            parent.left= new TreeNode(val);
+        if(val>parent.val){
+            parent.right= new TreeNode(val);
         }    
         else
         {
-            parent.right =new TreeNode(val);
+            parent.left =new TreeNode(val);
         }
         return root;
         
     }
-    
-        
-}
+}      
+      
