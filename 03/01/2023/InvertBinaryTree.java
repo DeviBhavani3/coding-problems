@@ -29,3 +29,4 @@ class Solution {
         invert(root.left);
         invert(root.right);
     }
+}
